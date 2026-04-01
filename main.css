@@ -1,0 +1,542 @@
+:root {
+    --bg-main: #11151c;
+    --bg-window: #1a1e27;
+    --bg-tab: #232834;
+    --bg-tab-active: #1a1e27;
+    --border-color: #2e3440;
+
+    /* Syntax highlighting */
+    --text-main: #abb2bf;
+    --keyword: #c678dd;
+    --string: #98c379;
+    --property: #e06c75;
+    --variable: #61afef;
+    --number: #d19a66;
+    --comment: #5c6370;
+    --prompt: #61afef;
+    --success: #98c379;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Fira Code", monospace;
+    line-height: 1.6;
+    padding: 40px 20px;
+    font-size: 14px;
+    position: relative;
+}
+
+/* --- HIỆU ỨNG MƯA SAO BĂNG --- */
+.meteor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+.star {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+}
+@keyframes twinkle {
+    0% {
+        opacity: 0.1;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+.meteor {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0) 0%,
+        var(--variable) 100%
+    );
+    box-shadow: 0 0 15px 2px rgba(97, 175, 239, 0.4);
+    transform-origin: bottom;
+    animation: meteor-fall linear forwards;
+}
+@keyframes meteor-fall {
+    0% {
+        transform: rotate(45deg) translateY(-100px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateY(2000px);
+        opacity: 0;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Terminal Header --- */
+.terminal-header {
+    background-color: rgba(26, 30, 39, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.window-controls {
+    padding: 12px 15px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.dot.red {
+    background-color: #ff5f56;
+}
+.dot.yellow {
+    background-color: #ffbd2e;
+}
+.dot.green {
+    background-color: #27c93f;
+}
+.terminal-body {
+    padding: 20px;
+}
+.cmd-line {
+    margin-bottom: 10px;
+}
+.prompt {
+    color: var(--prompt);
+    margin-right: 10px;
+    font-weight: bold;
+}
+.output.green {
+    color: var(--success);
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+/* --- Sticky Toolbar & Tabs --- */
+.sticky-toolbar {
+    position: sticky;
+    top: 20px;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1px;
+}
+.tabs {
+    display: flex;
+    background-color: var(--bg-tab);
+    border-radius: 8px 8px 0 0;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+.tab {
+    padding: 12px 20px;
+    color: #8b949e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-right: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.tab:hover {
+    color: #c9d1d9;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.tab.active {
+    background-color: var(--bg-tab-active);
+    color: #c9d1d9;
+    border-top: 2px solid var(--variable);
+}
+
+/* --- Nút Download Wow --- */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(97, 175, 239, 0.1);
+    color: var(--variable);
+    border: 1px solid var(--variable);
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(97, 175, 239, 0.2);
+    white-space: nowrap;
+}
+.btn-download:hover {
+    background: var(--variable);
+    color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(97, 175, 239, 0.6);
+    transform: translateY(-2px);
+}
+.btn-download::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg) translateX(-150%);
+    transition: all 0.6s ease;
+}
+.btn-download:hover::after {
+    transform: rotate(45deg) translateX(150%);
+}
+
+/* --- Cửa sổ Editor --- */
+.editor-window {
+    background-color: rgba(26, 30, 39, 0.85);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    scroll-margin-top: 80px;
+}
+#about {
+    border-top-left-radius: 0;
+}
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
+    font-family: "Inter", sans-serif;
+}
+.file-name {
+    font-weight: 500;
+    color: #c9d1d9;
+}
+.lang-badge {
+    background-color: #2d333b;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #8b949e;
+}
+.code-content {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+/* --- Syntax Classes --- */
+.kw {
+    color: var(--keyword);
+}
+.str {
+    color: var(--string);
+}
+.prop {
+    color: var(--property);
+}
+.var {
+    color: var(--variable);
+}
+.num {
+    color: var(--number);
+}
+.cmt {
+    color: var(--comment);
+    font-style: italic;
+}
+.md-h1 {
+    color: var(--variable);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.md-link {
+    color: var(--variable);
+    text-decoration: underline;
+}
+
+/* --- HOBBIES GRID WOW EFFECT --- */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+    font-family: "Inter", sans-serif;
+}
+.hobby-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+.hobby-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+.hobby-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #c9d1d9;
+}
+/* Hover Effect */
+.hobby-card:hover {
+    transform: translateY(-8px);
+    background: rgba(97, 175, 239, 0.08);
+    border-color: rgba(97, 175, 239, 0.4);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(97, 175, 239, 0.2);
+}
+.hobby-card:hover .hobby-icon {
+    color: var(--variable);
+    transform: scale(1.1) rotate(5deg);
+    text-shadow: 0 0 15px rgba(97, 175, 239, 0.6);
+}
+/* Ánh sáng quét trong card */
+.hobby-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+.hobby-card:hover::before {
+    left: 150%;
+}
+
+/* --- Status Bar & Music Player --- */
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1e27;
+    border-top: 1px solid var(--border-color);
+    padding: 8px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    z-index: 100;
+}
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.status-item i {
+    font-size: 10px;
+}
+.text-green {
+    color: var(--success);
+}
+.text-blue {
+    color: var(--variable);
+}
+.text-pink {
+    color: var(--keyword);
+}
+
+/* Máy phát nhạc mini */
+.music-player {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.music-player:hover {
+    background: rgba(97, 175, 239, 0.15);
+    border-color: rgba(97, 175, 239, 0.4);
+}
+.music-player i.fa-play,
+.music-player i.fa-pause {
+    font-size: 12px;
+    color: var(--success);
+}
+.song-title {
+    font-weight: 500;
+    color: #e5c07b;
+}
+
+/* Hiệu ứng sóng nhạc (Equalizer) */
+.equalizer {
+    display: none;
+    height: 10px;
+    gap: 2px;
+    align-items: flex-end;
+    margin-left: 5px;
+}
+.equalizer.playing {
+    display: flex;
+}
+.bar {
+    width: 3px;
+    background-color: var(--variable);
+    border-radius: 1px;
+    animation: equalize 1s infinite alternate ease-in-out;
+}
+.bar:nth-child(1) {
+    height: 4px;
+    animation-delay: 0.1s;
+}
+.bar:nth-child(2) {
+    height: 8px;
+    animation-delay: 0.3s;
+}
+.bar:nth-child(3) {
+    height: 5px;
+    animation-delay: 0.5s;
+}
+.bar:nth-child(4) {
+    height: 10px;
+    animation-delay: 0.2s;
+}
+@keyframes equalize {
+    0% {
+        height: 3px;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+.padding-bottom {
+    padding-bottom: 60px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 850px) {
+    body {
+        padding: 20px 15px;
+    }
+    .sticky-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        top: 10px;
+        margin-bottom: 15px;
+    }
+    .tabs {
+        border-radius: 8px;
+        border-bottom: 1px solid var(--border-color);
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .tab {
+        flex-shrink: 0;
+        padding: 12px 16px;
+    }
+    .btn-download {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .editor-window {
+        scroll-margin-top: 140px;
+    }
+    #about {
+        border-top-left-radius: 8px;
+    }
+    .status-item.text-pink {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+        padding: 15px 10px;
+    }
+    .window-controls {
+        padding: 8px 12px;
+    }
+    .terminal-body,
+    .code-content {
+        padding: 15px;
+    }
+    .editor-header {
+        padding: 10px 15px;
+    }
+    .status-bar {
+        font-size: 10px;
+        padding: 8px 10px;
+        gap: 10px;
+    }
+    .status-item.text-blue {
+        display: none;
+    } /* Giấu bớt chữ để nhường chỗ cho máy nghe nhạc */
+    .song-title {
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}

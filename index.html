@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Eric Bit - Developer Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+    <body>
+        <div class="container padding-bottom">
+            <div class="terminal-header">
+                <div class="window-controls">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <div class="cmd-line">
+                        <span class="prompt">$</span>whoami
+                    </div>
+                    <div class="output green">Eric Bit (Hoàng Văn Bít)</div>
+                    <div class="cmd-line">
+                        <span class="prompt">$</span>cat education.txt
+                    </div>
+                    <div class="output green">
+                        Cao đẳng Sư phạm Lạng Sơn | GPA: 3.77/4.00
+                    </div>
+                    <div class="cmd-line">
+                        <span class="prompt">$</span>contact --info<span
+                            style="animation: blink 1s step-end infinite"
+                            >_</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky-toolbar">
+                <div class="tabs" id="tab-container">
+                    <div class="tab active" data-target="about">
+                        <i class="fa-brands fa-js" style="color: #f7df1e"></i>
+                        about.js
+                    </div>
+                    <div class="tab" data-target="skills">
+                        <i
+                            class="fa-brands fa-python"
+                            style="color: #3776ab"
+                        ></i>
+                        skills.py
+                    </div>
+                    <div class="tab" data-target="experience">
+                        <i class="fa-solid fa-code" style="color: #e34f26"></i>
+                        experience.json
+                    </div>
+                    <div class="tab" data-target="projects">
+                        <i
+                            class="fa-solid fa-file-lines"
+                            style="color: #519aba"
+                        ></i>
+                        projects.md
+                    </div>
+                    <div class="tab" data-target="hobbies">
+                        <i
+                            class="fa-brands fa-react"
+                            style="color: #61dafb"
+                        ></i>
+                        hobbies.jsx
+                    </div>
+                    <div class="tab" data-target="contact">
+                        <i class="fa-solid fa-gear" style="color: #cb3837"></i>
+                        contact.yml
+                    </div>
+                </div>
+                <a href="MyCV.pdf" class="btn-download" download
+                    ><i class="fa-solid fa-cloud-arrow-down"></i> Download
+                    CV.pdf</a
+                >
+            </div>
+
+            <div class="editor-window section" id="about">
+                <div class="editor-header">
+                    <div class="file-name">about.js</div>
+                    <div class="lang-badge">JavaScript</div>
+                </div>
+                <div class="code-content">
+                    <pre><span class="kw">const</span> <span class="var">developer</span> = {
+  <span class="prop">name</span>: <span class="str">"Eric Bit (Hoàng Văn Bít)"</span>,
+  <span class="prop">title</span>: <span class="str">"Thực tập sinh Tin học ứng dụng"</span>,
+  <span class="prop">location</span>: <span class="str">"Văn Lãng, Lạng Sơn"</span>,
+  <span class="prop">objective</span>: <span class="str">"Sinh viên năm cuối tìm kiếm cơ hội thực tập/Fresher để áp dụng kiến thức."</span>,
+  <span class="prop">currentlyLearning</span>: <span class="str">"Always learning and growing"</span>,
+
+  <span class="var">getMotivation</span>() {
+    <span class="kw">return</span> <span class="str">"Sẵn sàng học hỏi, trau dồi thêm các kỹ năng chuyên môn mới!"</span>;
+  }
+};</pre>
+                </div>
+            </div>
+
+            <div class="editor-window section" id="skills">
+                <div class="editor-header">
+                    <div class="file-name">skills.py</div>
+                    <div class="lang-badge">Python</div>
+                </div>
+                <div class="code-content">
+                    <pre><span class="kw">class</span> <span class="var">SkillSet</span>:
+    <span class="kw">def</span> <span class="var">__init__</span>(<span class="var">self</span>):
+        <span class="var">self</span>.technical_skills = [
+            <span class="str">"React"</span>, <span class="str">"Next.js"</span>, <span class="str">"PHP"</span>, <span class="str">"HTML/CSS"</span>,
+            <span class="str">"C#"</span>, <span class="str">"Python"</span>, <span class="str">"SQL"</span>, <span class="str">"Git/GitHub"</span>
+        ]
+        <span class="var">self</span>.security_skills = <span class="str">"Nền tảng về Ethical Hacking"</span>
+        <span class="var">self</span>.tools = [<span class="str">"MS Office"</span>, <span class="str">"AutoCAD"</span>]
+
+    <span class="kw">def</span> <span class="var">get_languages</span>(<span class="var">self</span>):
+        <span class="cmt"># Chứng chỉ Duolingo 130</span>
+        <span class="kw">return</span> { <span class="str">"English"</span>: <span class="str">"Trình độ làm việc chuyên nghiệp"</span> }</pre>
+                </div>
+            </div>
+
+            <div class="editor-window section" id="experience">
+                <div class="editor-header">
+                    <div class="file-name">experience.json</div>
+                    <div class="lang-badge">JSON</div>
+                </div>
+                <div class="code-content">
+                    <pre>{
+  <span class="prop">"workHistory"</span>: [
+    {
+      <span class="prop">"project"</span>: <span class="str">"Dự án website học tiếng Tày (hoctiengtay.edu.vn)"</span>,
+      <span class="prop">"position"</span>: <span class="str">"Back-end Developer Intern"</span>,
+      <span class="prop">"duration"</span>: <span class="str">"09/2025 - 12/2025"</span>,
+      <span class="prop">"achievements"</span>: <span class="str">"Phát triển Back-end cơ bản và deploy code lên server thực tế."</span>
+    }
+  ],
+  <span class="prop">"certifications"</span>: [
+    <span class="str">"Ethical Hacking & Cybersecurity Certification (HackerX - 05/2025)"</span>
+  ]
+}</pre>
+                </div>
+            </div>
+
+            <div class="editor-window section" id="projects">
+                <div class="editor-header">
+                    <div class="file-name">projects.md</div>
+                    <div class="lang-badge">Markdown</div>
+                </div>
+                <div class="code-content">
+                    <pre><span class="md-h1"># Dự án học tập: Khóa học Lập trình Web F8 (2024 - 2025)</span>
+<span class="cmt">> Rèn luyện kỹ năng cắt HTML/CSS từ bản thiết kế UI/UX có sẵn. Tự tay hoàn thiện và triển khai trực tuyến.</span>
+
+<span class="kw">-</span> <span class="var">**GroceryMart**</span> (Giao diện trang thương mại điện tử)
+  🔗 <a href="https://biteric1.github.io/shopping" class="md-link" target="_blank">https://biteric1.github.io/shopping</a>
+
+<span class="kw">-</span> <span class="var">**PixelPro**</span> (Giao diện trang chỉnh sửa ảnh bằng AI)
+  🔗 <a href="https://biteric1.github.io/ai-photo" class="md-link" target="_blank">https://biteric1.github.io/ai-photo</a></pre>
+                </div>
+            </div>
+
+            <div class="editor-window section" id="hobbies">
+                <div class="editor-header">
+                    <div class="file-name">hobbies.jsx</div>
+                    <div class="lang-badge">React</div>
+                </div>
+                <div class="code-content" style="padding-bottom: 5px">
+                    <pre><span class="kw">export default function</span> <span class="var">LifeOutsideCode</span>() {
+  <span class="kw">return</span> (
+    <span class="cmt">&lt;!-- Khi tắt máy tính, tớ thường... --&gt;</span>
+  );
+}</pre>
+                </div>
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-headphones hobby-icon"></i>
+                        <div class="hobby-name">Nghe nhạc</div>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-cube hobby-icon"></i>
+                        <div class="hobby-name">Giải Rubik</div>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-plane-departure hobby-icon"></i>
+                        <div class="hobby-name">Đi du lịch</div>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-book hobby-icon"></i>
+                        <div class="hobby-name">Đọc sách</div>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-film hobby-icon"></i>
+                        <div class="hobby-name">Xem phim</div>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fa-solid fa-utensils hobby-icon"></i>
+                        <div class="hobby-name">Nấu ăn</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-window section" id="contact">
+                <div class="editor-header">
+                    <div class="file-name">contact.yml</div>
+                    <div class="lang-badge">YAML</div>
+                </div>
+                <div class="code-content">
+                    <pre><span class="prop">contact_info:</span>
+  <span class="prop">email:</span> <span class="str">"hoangbit185@gmail.com"</span>
+  <span class="prop">phone:</span> <span class="str">"0336990472"</span>
+  <span class="prop">address:</span> <span class="str">"Văn Lãng, Lạng Sơn"</span>
+
+<span class="prop">social_links:</span>
+  <span class="kw">-</span> <span class="prop">platform:</span> <span class="str">"GitHub"</span>
+    <span class="prop">url:</span> <a href="https://github.com/BitEric1" target="_blank" class="str">https://github.com/BitEric1</a>
+  <span class="kw">-</span> <span class="prop">platform:</span> <span class="str">"Facebook"</span>
+    <span class="prop">url:</span> <a href="https://www.facebook.com/bitericls" target="_blank" class="str">https://www.facebook.com/bitericls</a>
+  <span class="kw">-</span> <span class="prop">platform:</span> <span class="str">"LinkedIn"</span>
+    <span class="prop">url:</span> <a href="https://www.linkedin.com/in/eric-bit-27369430b/" target="_blank" class="str">https://www.linkedin.com/in/eric-bit-27369430b/</a>
+</pre>
+                </div>
+            </div>
+
+            <div class="editor-window" style="margin-bottom: 0">
+                <div class="editor-header">
+                    <div class="file-name">terminal</div>
+                    <div class="lang-badge">bash</div>
+                </div>
+                <div class="code-content">
+                    <div class="cmd-line">
+                        <span class="prompt">$</span>echo "Thanks for visiting!"
+                    </div>
+                    <div class="output green" style="margin-top: 5px">
+                        Have a nice day!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <audio id="bg-audio" loop>
+            <source src="noi_nay_co_anh.mp3" type="audio/mpeg" />
+        </audio>
+
+        <div class="status-bar">
+            <div class="status-item text-green">
+                <i class="fa-solid fa-circle"></i> Online
+            </div>
+            <div class="status-item text-blue">
+                <i class="fa-solid fa-bolt"></i> Available for hire
+            </div>
+            <div class="status-item text-pink">
+                <i class="fa-solid fa-rocket"></i> Building the future
+            </div>
+
+            <div class="status-item text-main" style="margin-left: auto">
+                <i class="fa-solid fa-location-dot"></i> Lạng Sơn, Việt Nam
+            </div>
+
+            <div class="status-item music-player" id="toggle-music">
+                <i class="fa-solid fa-play" id="music-icon"></i>
+                <span class="song-title">Nơi này có anh - M-TP</span>
+                <div class="equalizer" id="equalizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
