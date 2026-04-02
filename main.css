@@ -146,7 +146,7 @@ body {
 /* --- Sticky Toolbar & Tabs --- */
 .sticky-toolbar {
     position: sticky;
-    top: 20px;
+    top: 2px;
     z-index: 50;
     display: flex;
     justify-content: space-between;
@@ -304,7 +304,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 20px;
-    padding: 10px 0;
+    padding: 10px 20px;
     font-family: "Inter", sans-serif;
 }
 .hobby-card {
@@ -476,7 +476,7 @@ body {
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
-        top: 10px;
+        top: 4px;
         margin-bottom: 15px;
     }
     .tabs {
