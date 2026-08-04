@@ -28,7 +28,7 @@ html {
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
-    font-family: "Fira Code", monospace;
+    font-family: 'Fira Code', monospace;
     line-height: 1.6;
     padding: 40px 20px;
     font-size: 14px;
@@ -160,7 +160,7 @@ body {
     border: 1px solid var(--border-color);
     border-bottom: none;
     overflow: hidden;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
 }
@@ -190,13 +190,13 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 10px 12px;
     background: rgba(97, 175, 239, 0.1);
     color: var(--variable);
     border: 1px solid var(--variable);
     border-radius: 6px;
     text-decoration: none;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -213,7 +213,7 @@ body {
     transform: translateY(-2px);
 }
 .btn-download::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -251,7 +251,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     border-bottom: 1px solid var(--border-color);
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 .file-name {
     font-weight: 500;
@@ -305,7 +305,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 20px;
     padding: 10px 20px;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 .hobby-card {
     background: rgba(255, 255, 255, 0.03);
@@ -345,7 +345,7 @@ body {
 }
 /* Ánh sáng quét trong card */
 .hobby-card::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -100%;
@@ -364,6 +364,10 @@ body {
     left: 150%;
 }
 
+.hobby-hide-on-desktop {
+    display: none;
+}
+
 /* --- Status Bar & Music Player --- */
 .status-bar {
     position: fixed;
@@ -376,7 +380,7 @@ body {
     display: flex;
     gap: 20px;
     align-items: center;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 12px;
     z-index: 100;
 }

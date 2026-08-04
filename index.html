@@ -27,12 +27,12 @@
                     <div class="cmd-line">
                         <span class="prompt">$</span>whoami
                     </div>
-                    <div class="output green">Eric Bit (Hoàng Văn Bít)</div>
+                    <div class="output green">Hoàng Văn Bít (Eric Bit)</div>
                     <div class="cmd-line">
                         <span class="prompt">$</span>cat education.txt
                     </div>
                     <div class="output green">
-                        Cao đẳng Lạng Sơn | GPA: 3.77/4.00
+                        Cao đẳng Lạng Sơn | GPA: 3.73/4.00 | Hight Distinction
                     </div>
                     <div class="cmd-line">
                         <span class="prompt">$</span>contact --info<span
@@ -82,9 +82,8 @@
                         contact.yml
                     </div>
                 </div>
-                <a href="./CV.pdf" class="btn-download" download
-                    ><i class="fa-solid fa-cloud-arrow-down"></i> Download
-                    CV.pdf</a
+                <a href="./mycv.pdf" class="btn-download" download
+                    ><i class="fa-solid fa-cloud-arrow-down"></i> My CV.pdf</a
                 >
             </div>
 
@@ -95,10 +94,12 @@
                 </div>
                 <div class="code-content">
                     <pre><span class="kw">const</span> <span class="var">developer</span> = {
-  <span class="prop">name</span>: <span class="str">"Eric Bit (Hoàng Văn Bít)"</span>,
-  <span class="prop">title</span>: <span class="str">"Applied Informatics Intern"</span>,
+  <span class="prop">name</span>: <span class="str">"Hoàng Văn Bít (Eric Bit)"</span>,
+  <span class="prop">title</span>: <span class="str">"IT Support / Software Developer"</span>,
   <span class="prop">location</span>: <span class="str">"Van Lang, Lang Son"</span>,
-  <span class="prop">objective</span>: <span class="str">"Final year students are looking for internship/fresher opportunities to apply their knowledge."</span>,
+  <span class="prop">objective</span>: <span class="str">"Applied Informatics graduate with hands-on experience in web development, deployment, 
+  database management and IT support. Seeking a Fresher Software Developer or IT Support position 
+  where I can contribute while continuing to develop my technical expertise."</span>,
   <span class="prop">currentlyLearning</span>: <span class="str">"Always learning and growing"</span>,
 
   <span class="var">getMotivation</span>() {
@@ -113,19 +114,49 @@
                     <div class="file-name">skills.py</div>
                     <div class="lang-badge">Python</div>
                 </div>
+
                 <div class="code-content">
                     <pre><span class="kw">class</span> <span class="var">SkillSet</span>:
     <span class="kw">def</span> <span class="var">__init__</span>(<span class="var">self</span>):
-        <span class="var">self</span>.technical_skills = [
-            <span class="str">"React"</span>, <span class="str">"Next.js"</span>, <span class="str">"PHP"</span>, <span class="str">"HTML/CSS"</span>,
-            <span class="str">"C#"</span>, <span class="str">"Python"</span>, <span class="str">"SQL"</span>, <span class="str">"Git/GitHub"</span>
+
+        <span class="cmt"># Programming Languages</span>
+        <span class="var">self</span>.languages = [
+            <span class="str">"C#"</span>,
+            <span class="str">"Python"</span>,
+            <span class="str">"JavaScript"</span>,
+            <span class="str">"PHP"</span>
         ]
-        <span class="var">self</span>.security_skills = <span class="str">"Ethical Hacking Basics"</span>
-        <span class="var">self</span>.tools = [<span class="str">"MS Office"</span>, <span class="str">"AutoCAD"</span>]
+
+        <span class="cmt"># Web Development</span>
+        <span class="var">self</span>.web = [
+            <span class="str">"ASP.NET Core"</span>,
+            <span class="str">"HTML/CSS"</span>,
+            <span class="str">"Bootstrap"</span>,
+            <span class="str">"React (Basic)"</span>
+        ]
+
+        <span class="cmt"># Database</span>
+        <span class="var">self</span>.database = [
+            <span class="str">"PostgreSQL"</span>,
+            <span class="str">"SQL Server"</span>,
+            <span class="str">"MySQL"</span>,
+            <span class="str">"Entity Framework Core"</span>
+        ]
+
+        <span class="cmt"># Tools</span>
+        <span class="var">self</span>.tools = [
+            <span class="str">"Git/GitHub"</span>,
+            <span class="str">"Docker"</span>,
+            <span class="str">"Linux"</span>,
+            <span class="str">"VS Code"</span>,
+            <span class="str">"Visual Studio"</span>
+        ]
 
     <span class="kw">def</span> <span class="var">get_languages</span>(<span class="var">self</span>):
-        <span class="cmt"># Duolingo Certification 130</span>
-        <span class="kw">return</span> { <span class="str">"English"</span>: <span class="str">"Basic work qualifications"</span> }</pre>
+        <span class="kw">return</span> {
+            <span class="str">"Vietnamese"</span>: <span class="str">"Native"</span>,
+            <span class="str">"English"</span>: <span class="str">"Technical Reading & Basic Communication"</span>
+        }</pre>
                 </div>
             </div>
 
@@ -211,10 +242,10 @@
                         <i class="fa-solid fa-film hobby-icon"></i>
                         <div class="hobby-name">Watching movies</div>
                     </div>
-                    <!-- <div class="hobby-card">
+                    <div class="hobby-card hobby-hide-on-desktop">
                         <i class="fa-solid fa-utensils hobby-icon"></i>
                         <div class="hobby-name">Cooking</div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 
