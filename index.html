@@ -27,7 +27,7 @@
                     <div class="cmd-line">
                         <span class="prompt">$</span>whoami
                     </div>
-                    <div class="output green">Hoàng Văn Bít (Eric Bit)</div>
+                    <div class="output green">Hoang Van Bit (Eric Bit)</div>
                     <div class="cmd-line">
                         <span class="prompt">$</span>cat education.txt
                     </div>
@@ -82,7 +82,7 @@
                         contact.yml
                     </div>
                 </div>
-                <a href="./mycv.pdf" class="btn-download" download
+                <a href="./mycvte.pdf" class="btn-download" download
                     ><i class="fa-solid fa-cloud-arrow-down"></i> My CV.pdf</a
                 >
             </div>
@@ -94,12 +94,18 @@
                 </div>
                 <div class="code-content">
                     <pre><span class="kw">const</span> <span class="var">developer</span> = {
-  <span class="prop">name</span>: <span class="str">"Hoàng Văn Bít (Eric Bit)"</span>,
-  <span class="prop">title</span>: <span class="str">"IT Support / Software Developer"</span>,
+  <span class="prop">name</span>: <span class="str">"Hoang Van Bit (Eric Bit)"</span>,
+  <span class="prop">title</span>: <span class="str">"Fresher Test Engineer (TE)"</span>,
   <span class="prop">location</span>: <span class="str">"Van Lang, Lang Son"</span>,
-  <span class="prop">objective</span>: <span class="str">"Applied Informatics graduate with hands-on experience in web development, deployment, 
-  database management and IT support. Seeking a Fresher Software Developer or IT Support position 
-  where I can contribute while continuing to develop my technical expertise."</span>,
+  <span class="prop">objective</span>: <span class="str">[
+            "Graduated with an Excellent degree in Applied Informatics, with a GPA of 3.73/4.00. 
+            Possess a foundation in programming, computer systems, databases, and technical problem-solving. 
+            Have practical experience in software development, system deployment, and basic technical support.",
+            "Seeking an opportunity to start my career as a Test Engineer, where I can apply my programming and 
+            problem-solving skills while learning about testing systems, production processes, '
+            and engineering operations. 
+            Willing to learn quickly and develop a long-term career in a manufacturing environment."
+  ]</span>,
   <span class="prop">currentlyLearning</span>: <span class="str">"Always learning and growing"</span>,
 
   <span class="var">getMotivation</span>() {
@@ -121,10 +127,9 @@
 
         <span class="cmt"># Programming Languages</span>
         <span class="var">self</span>.languages = [
-            <span class="str">"C#"</span>,
+            <span class="str">"C# (.NET)"</span>,
             <span class="str">"Python"</span>,
-            <span class="str">"JavaScript"</span>,
-            <span class="str">"PHP"</span>
+            <span class="str">"JavaScript"</span>,<!-- <span class="str">"PHP"</span> -->
         ]
 
         <span class="cmt"># Web Development</span>
@@ -139,8 +144,7 @@
         <span class="var">self</span>.database = [
             <span class="str">"PostgreSQL"</span>,
             <span class="str">"SQL Server"</span>,
-            <span class="str">"MySQL"</span>,
-            <span class="str">"Entity Framework Core"</span>
+            <span class="str">"MySQL"</span>,<!-- <span class="str">"Entity Framework Core"</span> -->
         ]
 
         <span class="cmt"># Tools</span>
@@ -148,8 +152,7 @@
             <span class="str">"Git/GitHub"</span>,
             <span class="str">"Docker"</span>,
             <span class="str">"Linux"</span>,
-            <span class="str">"VS Code"</span>,
-            <span class="str">"Visual Studio"</span>
+            <span class="str">"VS Code"</span>,<!-- <span class="str">"Visual Studio"</span> -->
         ]
 
     <span class="kw">def</span> <span class="var">get_languages</span>(<span class="var">self</span>):
@@ -172,16 +175,21 @@
       <span class="prop">"project"</span>: <span class="str">"Tay language learning website project (<a href="http://hoctiengtay.edu.vn" class="str" target="_blank" rel="noopener noreferrer">hoctiengtay.edu.vn</a>)"</span>,
       <span class="prop">"position"</span>: <span class="str">"Back-end Developer Intern"</span>,
       <span class="prop">"duration"</span>: <span class="str">"09/2025 - 12/2025"</span>,
-      <span class="prop">"achievements"</span>: <span class="str">"Develop the basic back-end and deploy the code to the actual server."</span>
+      <span class="prop">"achievements"</span>: <span class="str">[
+            "Participated in designing the database structure and developing backend functions 
+            for the application.",
+            "Deployed the application to a production environment, enabling the system to operate online."
+        ]</span>
     },
     {
       <span class="prop">"project"</span>: <span class="str">"VNPT Lang Son Website Development Project (<a href="https://baohanh.vienthonglangson.vn" class="str" target="_blank" rel="noopener noreferrer">baohanh.vienthonglangson.vn</a>)"</span>,
       <span class="prop">"position"</span>: <span class="str">"Software Developer Intern"</span>,
       <span class="prop">"duration"</span>: <span class="str">"04/2026 - 06/2026"</span>,
       <span class="prop">"achievements"</span>: <span class="str">[
-            "Participated in developing and deploying the website for VNPT Lang Son",
-            "Collaborated in designing user interfaces and implementing web features.",
-            "Supported software installation, system configuration, and IT equipment setup for end users."
+            "Participated in the development and deployment of a warranty management web system.",
+            "Contributed to interface development and implementation of system features.",
+            "Assisted with software installation and basic IT equipment setup, including computers and printers."
+            "Developed problem-solving skills through practical software deployment and technical support tasks."
        ]</span>
     }
   ],
